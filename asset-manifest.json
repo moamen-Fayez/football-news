@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/football-news/static/css/main.2cc22aae.css",
+    "main.js": "/football-news/static/js/main.304c09b5.js",
+    "static/js/787.ee2b4d1a.chunk.js": "/football-news/static/js/787.ee2b4d1a.chunk.js",
+    "index.html": "/football-news/index.html",
+    "main.2cc22aae.css.map": "/football-news/static/css/main.2cc22aae.css.map",
+    "main.304c09b5.js.map": "/football-news/static/js/main.304c09b5.js.map",
+    "787.ee2b4d1a.chunk.js.map": "/football-news/static/js/787.ee2b4d1a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cc22aae.css",
+    "static/js/main.304c09b5.js"
+  ]
+}
