@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { React } from 'react';
+import { useState, useEffect } from 'react';
 function App() {
+ 
+  const [feeds, setFeeds] = useState([]);
+  
+  useEffect( () => {
+    fetch('https://www.scorebat.com/video-api/v3/feed/?token=[MTQ1OTNfMTY0NjIyMzgwN181OTFlNzk2NjdhYTlkMDQ3NDY2NzA4YTYyNTE2MTdiM2FlNmQ0YjNj]')
+    .then(res => {
+      return res.json()
+    } ).then(date => { console.log(date.response); setFeeds(date.response)
+
+    }    )
+  }, [])
+  //console.log(feeds.response)
+
   return (
+    <>
+    <div className='hdr'>Check your favorite team's results, news and more!</div>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      { feeds.map((feed)=> <div className='evfeed'>
+      <a href={feed.matchviewUrl} target='_blank' rel='noreferrer' > <img className='imgy' src={feed.thumbnail} alt='pic'      /> </a><br/>
+          <p>{feed.title}</p>
+          <p>{feed.competition}</p>
+          <p>{feed.date}</p>
+      </div>  ) }
+    
+    
     </div>
+    </>
   );
 }
 
